@@ -20,3 +20,9 @@ jobs:
             run: |
              node -v
              npm -v
+         
+          - name: node.js installation
+            run: npm install
+          
+          - name: run the tests
+            run: npm test

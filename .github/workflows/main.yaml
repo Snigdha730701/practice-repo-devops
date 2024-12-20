@@ -31,4 +31,10 @@ jobs:
             run: |
                  pwd
                  ls
-            
+          
+          - name: Upload a Build Artifact
+            uses: actions/upload-artifact@v4.5.0
+            with:
+              name: node-modules
+              path: node_modules
+              retention-days: 2

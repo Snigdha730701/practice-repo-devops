@@ -10,3 +10,13 @@ jobs:
         steps:
           - name: Checkout
             uses: actions/checkout@v4.2.2
+
+          - name: Setup Node.js environment
+            uses: actions/setup-node@v4.1.0
+            with:
+              node-version: 20
+
+          - name: check the node version
+            run: |
+             node -v
+             npm -v

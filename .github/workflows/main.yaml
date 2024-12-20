@@ -26,3 +26,9 @@ jobs:
           
           - name: run the tests
             run: npm test
+
+          - name: view directory 
+            run: |
+                 pwd
+                 ls
+            

@@ -39,7 +39,7 @@ jobs:
               path: node_modules
               retention-days: 2
     
-    download:
+    build-push-docker :
         runs-on: ubuntu-latest
         needs: build
         steps:
@@ -57,7 +57,12 @@ jobs:
              username: ${{ secrets.ACR_USERNAME }}
              password: ${{ secrets.ACR_PASSWORD }}
              login-server: ${{ secrets.ACR_LOGIN_SERVER }}
-              
+         
+          - name: Docker-build
+            run: |
+                docker build -t nodeapp .
+                docker tag nodeapp:latest acrdevops1.azurecr.io/frontend/nodeapp:v1
+                docker push acrdevops1.azurecr.io/frontend/nodeapp:v1
                     
 
 
